@@ -21,7 +21,7 @@
     const imagePath = character.image;
     const imageElement = document.createElement("img");
     imageElement.setAttribute('class', 'character-img');
-    imageElement.setAttribute('src', window.location.href + imagePath);
+    imageElement.setAttribute('src', String(window.location.href + imagePath) );
     divElement.appendChild(imageElement);
 
     // create character name elements

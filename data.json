@@ -2,16 +2,19 @@
   "characters": [
     {
       "name": "Donkey Kong",
+      "image": "/images/donkey-kong-img.webp",
       "level": 8,
       "speed": 2
     },
     {
       "name": "Yoshi",
+      "image": "/images/yoshi-img.webp",
       "level": 5,
       "speed": 6
     },
     {
       "name": "Luigi",
+      "image": "/images/luigi-img.webp",
       "level": 10,
       "speed": 11
     }

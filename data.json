@@ -1,0 +1,19 @@
+{
+  "characters": [
+    {
+      "name": "Donkey Kong",
+      "level": 8,
+      "speed": 2
+    },
+    {
+      "name": "Yoshi",
+      "level": 5,
+      "speed": 6
+    },
+    {
+      "name": "Luigi",
+      "level": 10,
+      "speed": 11
+    }
+  ]
+}

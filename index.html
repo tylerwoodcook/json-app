@@ -1,0 +1,40 @@
+<section id="character-section"></section>
+
+<script type="module">
+  import data from './data.json' assert { type: 'json' };
+
+  let charactersArray = data.characters;
+
+  for (const character of charactersArray) {
+    // do something with each individual character array
+    console.log(character);
+
+    const sectionElement = document.getElementById('character-section');
+    const characterNameCleaned = String(character.name.replace(/\s+/g, '-').toLowerCase());
+
+    // create div for each character
+    const divElement = document.createElement("div");
+    divElement.setAttribute('id', 'character' + '-' + characterNameCleaned);
+    sectionElement.appendChild(divElement);
+
+    // create character name elements
+    const nameElement = document.createElement("h2");
+    nameElement.setAttribute('class', 'character-name');
+    nameElement.innerHTML = character.name;
+    divElement.appendChild(nameElement);
+
+    // create character level elements
+    const levelElement = document.createElement("p");
+    levelElement.setAttribute('class', 'character-level');
+    levelElement.innerHTML = "Level: " + character.level;
+    divElement.appendChild(levelElement);
+
+    // create character speed elements
+    const speedElement = document.createElement("p");
+    speedElement.setAttribute('class', 'character-speed');
+    speedElement.innerHTML = "Speed: " + character.speed;
+    divElement.appendChild(speedElement);
+
+  }
+
+</script>

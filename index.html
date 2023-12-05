@@ -17,6 +17,12 @@
     divElement.setAttribute('id', 'character' + '-' + characterNameCleaned);
     sectionElement.appendChild(divElement);
 
+    //create img elements for each character
+    const imagePath = character.image;
+    const imageElement = document.createElement("img");
+    imageElement.setAttribute('class', 'character-img');
+    imageElement.setAttribute('src', imagePath);
+
     // create character name elements
     const nameElement = document.createElement("h2");
     nameElement.setAttribute('class', 'character-name');

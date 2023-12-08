@@ -72,6 +72,7 @@
     // create label container div
     const labelContainerElement = document.createElement("div");
     labelContainerElement.setAttribute('class', 'character-labels');
+    labelContainerElement.setAttribute('style', 'animation-duration: ' + character.speed + 's;'); // set speed
     divElement.appendChild(labelContainerElement);
 
     // add character name to label container

@@ -4,10 +4,13 @@
   }
   
   .character-container {
-    height: 100px;
     top: 0;
     left: 0;
     position: absolute;
+  }
+
+  .character-img {
+    height: 100px;
     animation-name: gif-animation;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -49,7 +52,7 @@
     const divElement = document.createElement("div");
     divElement.setAttribute('id', 'character' + '-' + characterNameCleaned);
     divElement.setAttribute('class', 'character-container');
-    divElement.setAttribute('style', 'animation-duration: ' + character.speed + 's;'); // set speed
+    // ------ divElement.setAttribute('style', 'animation-duration: ' + character.speed + 's;'); // set speed
     sectionElement.appendChild(divElement);
 
     //create img elements for each character

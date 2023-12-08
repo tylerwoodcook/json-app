@@ -2,6 +2,37 @@
   .character-img {
     max-width: 100px;
   }
+  
+  img.gif {
+    height: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    animation-name: gif-animation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .character-1, .label-1 {animation-delay: 1s; animation-duration: 22s;}
+  .character-2, .label-2 {animation-delay: 3s; animation-duration: 18s;}
+  .character-3, .label-3 {animation-delay: 5s; animation-duration: 32s;}
+  .character-4, .label-4 {animation-delay: 7s; animation-duration: 27s;}
+
+@keyframes gif-animation {
+  0% {transform: translate(0) scalex(-1);}
+  49% {transform: translate(800px) scalex(-1);}
+  50% {transform: translate(800px) scalex(1);}
+  99% {transform: translate(0) scalex(1);}
+  100% {transform: translate(0);}
+}
+@keyframes label-animation {
+  0% {transform: translate(0);}
+  49% {transform: translate(800px);}
+  50% {transform: translate(800px);}
+  99% {transform: translate(0);}
+  100% {transform: translate(0);}
+}
+
 </style>
 
 <section id="character-section"></section>
@@ -21,6 +52,7 @@
     // create div for each character
     const divElement = document.createElement("div");
     divElement.setAttribute('id', 'character' + '-' + characterNameCleaned);
+    divElement.setAttribute('class', 'character-container');
     sectionElement.appendChild(divElement);
 
     //create img elements for each character

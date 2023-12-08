@@ -16,6 +16,13 @@
     animation-timing-function: linear;
     animation-duration: 40s;
   }
+
+  .character-labels {
+    animation-name: label-animation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 40s;
+  }
   
 @keyframes gif-animation {
   0% {transform: translate(0) scalex(-1);}
@@ -52,7 +59,6 @@
     const divElement = document.createElement("div");
     divElement.setAttribute('id', 'character' + '-' + characterNameCleaned);
     divElement.setAttribute('class', 'character-container');
-    // ------ divElement.setAttribute('style', 'animation-duration: ' + character.speed + 's;'); // set speed
     sectionElement.appendChild(divElement);
 
     //create img elements for each character
@@ -60,26 +66,31 @@
     const imageElement = document.createElement("img");
     imageElement.setAttribute('class', 'character-img');
     imageElement.setAttribute('src', String(window.location.href + "images/" + imagePath) );
+    imageElement.setAttribute('style', 'animation-duration: ' + character.speed + 's;'); // set speed
     divElement.appendChild(imageElement);
 
-    // create character name elements
+    // create label container div
+    const labelContainerElement = document.createElement("div");
+    labelContainerElement.setAttribute('class', 'character-labels');
+    divElement.appendChild(labelContainerElement);
+
+    // add character name to label container
     const nameElement = document.createElement("h2");
     nameElement.setAttribute('class', 'character-name');
-    nameElement.setAttribute('style', 'animation-name: label-animation;');
     nameElement.innerHTML = character.name;
-    divElement.appendChild(nameElement);
+    labelContainerElement.appendChild(nameElement);
 
-    // create character level elements
+    // add character level to label container
     const levelElement = document.createElement("p");
     levelElement.setAttribute('class', 'character-level');
     levelElement.innerHTML = "Level: " + character.level;
-    divElement.appendChild(levelElement);
+    labelContainerElement.appendChild(levelElement);
 
-    // create character speed elements
+    // add character speed to label container
     const speedElement = document.createElement("p");
     speedElement.setAttribute('class', 'character-speed');
     speedElement.innerHTML = "Speed: " + character.speed;
-    divElement.appendChild(speedElement);
+    labelContainerElement.appendChild(speedElement);
 
   }
 

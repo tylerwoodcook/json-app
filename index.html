@@ -14,8 +14,6 @@
     animation-duration: 40s;
   }
   
-  .character-1, .label-1 {animation-delay: 1s; animation-duration: 22s;}
-
 @keyframes gif-animation {
   0% {transform: translate(0) scalex(-1);}
   49% {transform: translate(800px) scalex(-1);}
@@ -51,7 +49,7 @@
     const divElement = document.createElement("div");
     divElement.setAttribute('id', 'character' + '-' + characterNameCleaned);
     divElement.setAttribute('class', 'character-container');
-    divElement.setAttribute('style', 'animation-duration: ' + character.speed + 's;');
+    divElement.setAttribute('style', 'animation-duration: ' + character.speed + 's;'); // set speed
     sectionElement.appendChild(divElement);
 
     //create img elements for each character
@@ -64,6 +62,7 @@
     // create character name elements
     const nameElement = document.createElement("h2");
     nameElement.setAttribute('class', 'character-name');
+    nameElement.setAttribute('style', 'animation-name: label-animation;');
     nameElement.innerHTML = character.name;
     divElement.appendChild(nameElement);
 
